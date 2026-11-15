@@ -1,0 +1,15 @@
+# 見張り役を毎晩動かす cron の例（Linux・WSL 用。macOS は watch.plist を使う）
+#
+# 入れ方:
+#   1. <ユーザー名> を自分のユーザー名に直す（cron では ~ や $HOME が使えない場合があるので、そのまま書く）
+#   2. crontab -e を開き、下の行を写して保存する
+#   3. crontab -l で入ったか確かめる
+#   4. 見張りたいジョブを、watch/config.json の cron_jobs に同じ名前（メールの件名の【】）と同じ時刻で書く
+#
+# 時刻の5つの欄: 分 時 日 月 曜日。時刻は機械の時間帯で動く（CRON_TZ= は使わない＝見張り役の数え方とずれる）
+
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# 毎晩 22:00 に見張り役
+0 22 * * * /bin/bash /home/<ユーザー名>/claude-code-job-watch/watch/run.sh >>/home/<ユーザー名>/claude-code-job-watch/watch/logs/cron.log 2>&1

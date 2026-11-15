@@ -1,0 +1,13 @@
+digest/
+unsent/
+sent/
+watch/config.json
+watch/logs/
+watch/status.json
+watch/last_seen.json
+watch/job_names.json
+watch/loaded_since.json
+__pycache__/
+.DS_Store
+mail.conf
+.env

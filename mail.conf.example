@@ -1,0 +1,22 @@
+# 完了報告メールの設定の例
+# 使い方:
+#   mkdir -p ~/.config/ai-org-kit
+#   cp mail.conf.example ~/.config/ai-org-kit/mail.conf
+#   chmod 600 ~/.config/ai-org-kit/mail.conf
+#   その後、< > の所を自分の値に書き換える（< > は消す）
+# このファイル（例）には本物の値を書かない。本物は ~/.config/ai-org-kit/mail.conf にだけ書く
+# git で管理しているフォルダに本物の設定を置かない
+
+[mail]
+# 完了報告を受け取るアドレス
+to = <受け取るメールアドレス>
+# 送信元（省略すると下の user と同じ）
+from =
+
+[smtp]
+# Gmail の場合: host = smtp.gmail.com / port = 465
+# （Google アカウントで2段階認証をオンにし、「アプリ パスワード」を作って password に入れる）
+host = <SMTPサーバー>
+port = 465
+user = <送信に使うアカウントのアドレス>
+password = <アプリパスワード>

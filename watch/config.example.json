@@ -1,0 +1,27 @@
+{
+  "label_prefixes": [
+    "com.example.aiorg."
+  ],
+  "self_label": "com.example.aiorg.watch",
+  "cron_jobs": [
+    {"name": "毎朝の見回り", "schedule": "30 7 * * *"},
+    {"name": "セキュリティの見回り", "schedule": "0 13 * * 2"},
+    {"name": "学びの共有会", "schedule": "0 10 1 * *"}
+  ],
+  "grace_hours": 3,
+  "off_window_minutes": 2,
+  "lookback_days": 40,
+  "event_only": {
+    "prefixes": [],
+    "reason": "macOS だけ: 何も起きなかった回はメールを送らないジョブの接頭辞。読み込まれているかだけを見る"
+  },
+  "paused": {
+    "com.example.aiorg.sample-paused-job": "例: 意図して止めているジョブ。理由と止めた日を書く（使わなければこの行は消す）"
+  },
+  "_説明": {
+    "label_prefixes・self_label・event_only": "macOS（launchd）で使う。~/Library/LaunchAgents の plist のうち、この接頭辞で始まるものを見る",
+    "cron_jobs": "Linux・WSL（cron）で使う。name は run.sh の JOB_NAME（メールの件名の【】）と同じにし、schedule は crontab の時刻の5つの欄と同じにする。足した日を added（YYYY-MM-DD の形）に書いてもよい",
+    "paused": "止めているジョブ。macOS は launchd の Label、Linux・WSL は cron_jobs の name を書く",
+    "grace_hours": "予定の時刻から何時間待っても報告が無ければ知らせるか"
+  }
+}
