@@ -73,7 +73,7 @@ MIT — see [LICENSE](LICENSE).
 These two tools are a small part of **AI Org Kit for Claude Code**: job templates for `claude -p`
 (no double runs, timeouts, permission modes), sub-agent definitions, hooks, skills and a learning ledger,
 taken from a one-person setup that runs dozens of scheduled jobs every day.
-→ https://kit.orecticdesign.com/gh-en
+One-time purchase, $24 on Gumroad. → https://kit.orecticdesign.com/gh-en
 
 ---
 
